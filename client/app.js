@@ -1,11 +1,13 @@
 angular.module('cleanDo', [
   'cleanDo.todos',
-  'cleanDo.services'
+  'cleanDo.services',
+  'ngRoute'
 ])
+
 .config(function($routeProvider, $httpProvider) {
   $routeProvider
-  .when('/,', {
+  .when('/', {
     templateUrl: 'todos/todos.html',
-    controller: 'todos/todos.js'
+    controller: 'TodosController'
   })
 })
