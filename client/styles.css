@@ -15,3 +15,16 @@
   border: 1px solid black;
   width: 400px;
 }
+
+#taskList {
+  padding:0 0 0 20px;
+  text-align: left;
+}
+
+.bullet{
+  cursor:pointer;
+}
+
+.done {
+  text-decoration: line-through;
+}

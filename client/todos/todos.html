@@ -1,7 +1,7 @@
 <div id='todos'>
   <div class='todo' ng-repeat='task in tasks'>
-    <p>
-      <span> - </span>
+    <p ng-class="{'done': task.done}">
+      <span ng-click="task.done = !task.done" class="bullet"> - </span>
       <span>{{task.task}}</span>
     </p>
   </div>
