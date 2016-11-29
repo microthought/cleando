@@ -35,12 +35,27 @@ var Task = mongoose.model('Task', taskSchema);
 //app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-app.use(express.static(__dirname));
+app.use(express.static(__dirname + "/client"));
 
-app.get("/*", function(req, res){
+app.get("/", function(req, res){
 
   console.log("get query: ", req.query);
   res.send('Got your get');
+
+});
+
+
+app.get("/api/tasks", function(req, res){
+
+  Task.find()
+  .then(function(doc){
+
+    console.log(doc);
+    res.status(200).send(doc);
+
+  })
+
+
 
 });
 

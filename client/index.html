@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='cleanDo'>
 <head>
   <title>Clear Done</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
@@ -7,10 +7,11 @@
 <body>
   <div class="leftbuf"></div>
   <div class="main">
-    <h1>Things to Do</h1>
+    <h1>CleanDo</h1>
     <hr>
   </div>
-  <div class="leftbuf"></div>
-
+  <!-- Boom! Zoom! Bang! -->
+  <div ng-view></div>
+  <!-- Boom! Zoom! Bang! -->
 </body>
 </html>
