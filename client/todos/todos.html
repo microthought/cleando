@@ -5,4 +5,9 @@
       <span>{{task.task}}</span>
     </p>
   </div>
+  <div>
+    <form ng-submit="addTask()" name="taskForm">
+      <input type="text" name="newTask" ng-model="newTaskVal">
+    </form>
+  </div>
 </div>

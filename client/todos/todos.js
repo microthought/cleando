@@ -7,6 +7,18 @@ angular.module('cleanDo.todos', [])
   $scope.tasks;
 
 
+  $scope.addTask = function(){
+    console.log($scope.newTaskVal);
+
+    Serve.addTask($scope.newTaskVal)
+    .then(function(){
+      $scope.taskForm.$setPristine();
+      $scope.newTaskVal = '';
+      $scope.init();
+    })
+  };
+
+
   $scope.init = function() {
     console.log("scope initializing");
     Serve.getAll()
