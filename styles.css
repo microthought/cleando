@@ -1,0 +1,17 @@
+.main,
+.leftbuf,
+.rightbuf {
+  display: inline-block;
+}
+
+
+.leftbuf,
+.rightbuff {
+  width:100px;
+}
+
+.main{
+  text-align: center;
+  border: 1px solid black;
+  width: 400px;
+}
