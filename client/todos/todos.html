@@ -1,13 +1,27 @@
 <div id='todos'>
   <div class='todo' ng-repeat='task in tasks'>
-    <p ng-class="{'done': task.done}">
-      <span ng-click="task.done = !task.done" class="bullet"> - </span>
-      <span>{{task.task}}</span>
+    <p>
+      <span ng-click="toggleDone(task)" class="bullet" ng-class="{'done': task.done}" > -> </span>
+      <span ng-class="{'done': task.done}">{{task.task}}</span>
+      <span ng-click="toggleSubInput(task)" class="addSubTask">+</span>
+      <span ng-click="delete(task)" class="deleter">X</span>
     </p>
+    <div ng-repeat='subTask in task.subTasks'>
+      <p class="subTask">
+        <span ng-click="toggleDone(subTask)" class="bullet" ng-class="{'done': subTask.done}" > - </span>
+        <span ng-class="{'done': subTask.done}">{{subTask.task}}</span>
+        <span ng-click="deleteSub(subTask)" class="deleter">X</span>
+      </p>
+    </div>
+    <div class="taskForm" ng-show="task.showInput">
+      <form ng-submit="addSubTask(task, newSubTaskVal)" name="subTaskForm">
+        <input  type="text" name="newSubTask" ng-model="newSubTaskVal" placeholder="subtask">
+      </form>
+    </div>
   </div>
-  <div>
+  <div class="taskForm">
     <form ng-submit="addTask()" name="taskForm">
-      <input type="text" name="newTask" ng-model="newTaskVal">
+      <input type="text" name="newTask" ng-model="newTaskVal" placeholder="new task">
     </form>
   </div>
 </div>
